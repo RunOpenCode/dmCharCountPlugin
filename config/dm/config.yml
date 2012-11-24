@@ -1,0 +1,8 @@
+default:
+  dmCharCountPlugin:
+    all:
+      allowed: 255
+      warning: 10%
+      counterText: 'Characters left:'
+      
+    

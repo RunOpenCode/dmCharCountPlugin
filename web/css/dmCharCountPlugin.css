@@ -1,0 +1,15 @@
+.sfWidgetFormDmCharCountTextarea .char-count-text {
+  float: right;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #ccc;
+}
+.sfWidgetFormDmCharCountTextarea .char-count-text.warning {
+  color: orange;
+}
+.sfWidgetFormDmCharCountTextarea .char-count-text.warning.exceeded {
+  color: red;
+}
+.sfWidgetFormDmCharCountTextarea .char-count-text .char-count-number {
+  color: #666;
+}

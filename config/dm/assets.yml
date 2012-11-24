@@ -1,0 +1,7 @@
+js:
+  dmCharCountPlugin: 
+    launch: dmCharCountPlugin.pack.min
+
+css:
+  dmCharCountPlugin:
+    default: dmCharCountPlugin
