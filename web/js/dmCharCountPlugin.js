@@ -7,7 +7,7 @@
     };
     
     var countEventHandler = function() {
-        var $this = $(this).closest('span.sfWidgetFormDmCharCountTextarea');
+        var $this = $(this).closest('.sfWidgetFormDmCharCountTextarea');        
         methods['count'].apply($this,[]);
     };
     
@@ -58,13 +58,15 @@
     };
     
     $.fn.dmCharCountPlugin = function(method) {
-        if ( methods[method] ) {
-            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-        } else if ( typeof method === 'object' || ! method ) {
-            return methods.init.apply( this, arguments );
-        } else {
-            $.error( 'Method ' +  method + ' does not exist on jQuery.dmCharCountPlugin' );
-        };   
+        return this.each(function(){
+            if ( methods[method] ) {
+                return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+            } else if ( typeof method === 'object' || ! method ) {
+                return methods.init.apply( this, arguments );
+            } else {
+                $.error( 'Method ' +  method + ' does not exist on jQuery.dmCharCountPlugin' );
+            }; 
+        });
     };
      
 })(jQuery);
@@ -73,15 +75,15 @@
 (function($) {
     
     if ($('#dm_admin_content').length) {
-        $('#dm_admin_content').find('span.sfWidgetFormDmCharCountTextarea').dmCharCountPlugin();
+        $('#dm_admin_content').find('.sfWidgetFormDmCharCountTextarea').dmCharCountPlugin();
     };
     
     $('#dm_page div.dm_widget').bind('dmWidgetLaunch', function() {
-        $(this).find('span.sfWidgetFormDmCharCountTextarea').dmCharCountPlugin();
+        $(this).find('.sfWidgetFormDmCharCountTextarea').dmCharCountPlugin();
     });
     
     $('div.dm.dm_widget_edit_dialog_wrap').live('dmAjaxResponse', function() {
-        $(this).find('span.sfWidgetFormDmCharCountTextarea').dmCharCountPlugin();
+        $(this).find('.sfWidgetFormDmCharCountTextarea').dmCharCountPlugin();
     });
     
 })(jQuery);
