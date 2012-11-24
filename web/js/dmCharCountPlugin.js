@@ -9,7 +9,7 @@
     var countEventHandler = function() {
         var $this = $(this).closest('span.sfWidgetFormDmCharCountTextarea');
         methods['count'].apply($this,[]);
-    }
+    };
     
     var methods = {
         init: function() {
